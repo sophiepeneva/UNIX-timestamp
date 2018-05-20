@@ -6,7 +6,7 @@
 
 TimestampWithDescription::TimestampWithDescription(unsigned long s, const char* d) : Timestamp(s)
 {
-	description = new char[strlen(d)+1];
+	description = new char[strlen(d) + 1];
 	strcpy_s(description, strlen(d) + 1, d);
 }
 
@@ -42,14 +42,14 @@ void TimestampWithDescription::Destroy()
 void TimestampWithDescription::Copy(const TimestampWithDescription& tsWD)
 {
 	setValue(tsWD.getValue());
-	description = new char[strlen(tsWD.description)];
+	description = new char[strlen(tsWD.description) + 1];
 	strcpy_s(description, strlen(tsWD.description) + 1, tsWD.description);
 }
 
 
 void TimestampWithDescription::setDescription(const char* d)
 {
-	description = new char[strlen(d)];
+	description = new char[strlen(d) + 1];
 	strcpy_s(description, strlen(d) + 1, d);
 }
 
